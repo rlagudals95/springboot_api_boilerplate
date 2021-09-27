@@ -5,8 +5,10 @@ import java.util.List;
 import java.util.Map;
 import javax.annotation.PostConstruct;
 
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -38,9 +40,32 @@ public class UserProfileController {
 	
 	@PutMapping("/user/{id}")
 	public void putUserProfile(
+				@PathVariable("id") String id,
 				@RequestParam("name") String name, 
 				@RequestParam("phone") String phone,
 				@RequestParam("address") String address) {
+				
+		UserProfile userProfile = new UserProfile(id, name, phone,address);
+		userMap.put(id, userProfile);
+	}
+	
+	@PostMapping("/user/{id}") // 수정
+	public void postUserProfile(
+			@PathVariable("id") String id,
+			@RequestParam("name") String name, 
+			@RequestParam("phone") String phone,
+			@RequestParam("address") String address) {
 		
+		UserProfile userProfile = userMap.get(id); // 기존의 유저정보를 id를 통해 찾는다
+		userProfile.setName(name);
+		userProfile.setPhone(phone);
+		userProfile.setAddress(address);
+	}
+	
+	@DeleteMapping("/user/{id}")
+	public void deleteUserProfile(
+			@PathVariable("id") String id) {
+		
+		userMap.remove(id); // path를 통해 받은 id로 제거
 	}
 }
