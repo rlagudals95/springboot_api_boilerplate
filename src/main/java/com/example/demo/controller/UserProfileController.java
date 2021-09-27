@@ -26,12 +26,6 @@ public class UserProfileController {
 	}
 	
 	@GetMapping("/user/{id}") // JSON 형태로 mapping해 client에 전달
-	public UserProfile getUserProfileTest(@PathVariable("id") String id) {
-		
-		return (UserProfile) userMap;
-	}
-	
-	@GetMapping("/user/{id}") // JSON 형태로 mapping해 client에 전달
 	public UserProfile getUserProfile(@PathVariable("id") String id) {
 		
 		return userMap.get(id);
