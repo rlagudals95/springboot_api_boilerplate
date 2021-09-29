@@ -38,8 +38,8 @@ public class AWSClient {
 		amazonS3 = AmazonS3ClientBuilder.standard().withCredentials(new AWSStaticCredentialsProvider(creds)).withForceGlobalBucketAccessEnabled(true).withRegion(Regions.DEFAULT_REGION).build();
 		// amazonS3.setRegion(Region.getRegion(Regions.AP_NORTHEAST_2));
 		// dynamoClient = new AmazonDynamoDBClient(propertiesCredentials);
-		log.info("aws s3 initialize success.");
-		log.info("aws dynamoClient initialize success.");
+		//log.info("aws s3 initialize success.");
+		//log.info("aws dynamoClient initialize success.");
 		
 	}
 

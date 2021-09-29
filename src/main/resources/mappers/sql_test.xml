@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapper namespace="com.project.mong.dao.TestDAO">
+    <select id="getTestData" resultType="object">
+        select
+            title,
+            name
+        from
+            DB_TEST
+    </select>
+</mapper>

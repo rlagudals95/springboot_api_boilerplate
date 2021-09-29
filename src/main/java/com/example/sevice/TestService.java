@@ -16,7 +16,8 @@ public class TestService {
 	
 	
 	// 테스트 서비스
-	public List<Map<String, Object>> testsql(String param){
-		return (List<Map<String, Object>>)commonDao.queryForList("test.testsql", param);
+	@SuppressWarnings("unchecked")
+	public List<Map<String, Object>> testsql(){
+		return (List<Map<String, Object>>)commonDao.queryForList("test.testsql");
 	}
 }

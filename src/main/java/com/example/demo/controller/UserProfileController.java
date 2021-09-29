@@ -14,18 +14,16 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import com.example.demo.model.UserProfile;
+import com.example.sevice.TestService;
 
 
 @RestController // 이 클래스를 controller로 인식
 public class UserProfileController {
 	
-	/*
-	 * @Autowired private TestService testService;
-	 */
-	
 	
 	private Map<String, UserProfile> userMap;
 	
+
 	@PostConstruct
 	public void init() {
 		userMap = new HashMap<String, UserProfile>();
@@ -45,13 +43,6 @@ public class UserProfileController {
 		return new ArrayList<UserProfile>(userMap.values());
 	}
 	
-	//@Autowired
-	//private testService.testsql("test");
-	
-	/*
-	 * @GetMapping("/user/test") public List<Map<String, Object>> test() { return
-	 * testService.testsql("test"); }
-	 */
 	
 	@PutMapping("/user/{id}")
 	public void putUserProfile(
