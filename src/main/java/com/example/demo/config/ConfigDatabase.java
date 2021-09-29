@@ -1,4 +1,4 @@
-package com.example.demo.config;
+/*package com.example.demo.config;
 
 import javax.sql.DataSource;
 
@@ -53,4 +53,4 @@ public class ConfigDatabase {
         DataSourceTransactionManager manager = new DataSourceTransactionManager(dataSource());
         return manager;
     }
-}
+}*/

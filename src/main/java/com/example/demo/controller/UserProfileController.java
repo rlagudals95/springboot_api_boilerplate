@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 import javax.annotation.PostConstruct;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,8 +15,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import com.example.demo.model.UserProfile;
 
+
 @RestController // 이 클래스를 controller로 인식
 public class UserProfileController {
+	
+	/*
+	 * @Autowired private TestService testService;
+	 */
+	
 	
 	private Map<String, UserProfile> userMap;
 	
@@ -37,6 +44,13 @@ public class UserProfileController {
 	public List<UserProfile> getUserProfileList() {
 		return new ArrayList<UserProfile>(userMap.values());
 	}
+	
+	//testService.testsql("test");
+	
+	/*
+	 * @GetMapping("/user/test") public List<Map<String, Object>> test() { return
+	 * testService.testsql("test"); }
+	 */
 	
 	@PutMapping("/user/{id}")
 	public void putUserProfile(
@@ -60,6 +74,7 @@ public class UserProfileController {
 		userProfile.setName(name);
 		userProfile.setPhone(phone);
 		userProfile.setAddress(address);
+		
 	}
 	
 	@DeleteMapping("/user/{id}")
