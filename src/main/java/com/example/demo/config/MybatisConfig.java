@@ -18,7 +18,7 @@ public class MybatisConfig {
         sqlSessionFactoryBean.setDataSource(dataSource);
         /* 맵퍼 xml 파일 경로 설정 */
         Resource[] resources = new PathMatchingResourcePatternResolver()
-                .getResources("classpath:com/gglee/sample/mapper/*Mapper.xml"); // 쿼리문 작성 xml 파일명 포멧형식
+                .getResources("classpath:com/gglee/sample/mapper/*Mapper.xml"); // 쿼리문 작성 파일위치  &xml 파일명 포멧형식
         sqlSessionFactoryBean.setMapperLocations(resources);
         /* alias 설정 com.package..entity.Board -> resultType"Board" */
         sqlSessionFactoryBean.setTypeAliasesPackage("com.gglee.sample.*.entity");
