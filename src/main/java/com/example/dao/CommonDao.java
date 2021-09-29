@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 
-import com.workerman.encrypt.EncryptionInterface;
+import com.example.encrypt.EncryptionInterface;
 
 /**
  * 데이터베이스 연결클래스
