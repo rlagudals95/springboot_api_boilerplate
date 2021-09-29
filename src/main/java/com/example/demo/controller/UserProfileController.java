@@ -45,7 +45,8 @@ public class UserProfileController {
 		return new ArrayList<UserProfile>(userMap.values());
 	}
 	
-	//testService.testsql("test");
+	//@Autowired
+	//private testService.testsql("test");
 	
 	/*
 	 * @GetMapping("/user/test") public List<Map<String, Object>> test() { return
